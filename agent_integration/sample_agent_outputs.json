@@ -1,0 +1,57 @@
+[
+  {
+    "step": 1,
+    "tool_name": "thinking_and_plan",
+    "display_name": "任务规划",
+    "task_type": "任务规划业务",
+    "resource_weight": 0.5,
+    "status": "已完成",
+    "summary": "解析用户意图，规划语义分割、图像分析、报告生成与结果回传流程。",
+    "output_type": "plan",
+    "estimated_latency_level": "低"
+  },
+  {
+    "step": 2,
+    "tool_name": "rescuenet_segmentation",
+    "display_name": "灾害语义分割",
+    "task_type": "语义分割业务",
+    "resource_weight": 3.0,
+    "status": "已完成",
+    "summary": "对灾害图像进行语义分割，识别道路、水体、建筑受损等区域。",
+    "output_type": "segmentation_mask",
+    "estimated_latency_level": "高"
+  },
+  {
+    "step": 3,
+    "tool_name": "image_analysis",
+    "display_name": "灾害图像深度分析",
+    "task_type": "灾害图像深度分析业务",
+    "resource_weight": 4.0,
+    "status": "已完成",
+    "summary": "结合图像线索和分割结果，分析受灾区域、道路通行状态与救援风险。",
+    "output_type": "analysis_text",
+    "estimated_latency_level": "高"
+  },
+  {
+    "step": 4,
+    "tool_name": "report_making",
+    "display_name": "结构化报告生成",
+    "task_type": "结构化报告生成业务",
+    "resource_weight": 2.0,
+    "status": "已完成",
+    "summary": "汇总图像分析结论，形成应急处置建议和结构化灾情报告。",
+    "output_type": "structured_report",
+    "estimated_latency_level": "中"
+  },
+  {
+    "step": 5,
+    "tool_name": "tool_ending",
+    "display_name": "结果整理与回传",
+    "task_type": "结果回传业务",
+    "resource_weight": 0.5,
+    "status": "已完成",
+    "summary": "整理工具调用结果，将灾害分析摘要回传给上层应急服务流程。",
+    "output_type": "handoff_payload",
+    "estimated_latency_level": "低"
+  }
+]
